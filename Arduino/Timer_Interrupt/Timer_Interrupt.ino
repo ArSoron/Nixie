@@ -8,7 +8,7 @@
 //Пин подключен к DS входу 74HC595
 #define data_Pin 11
 
-volatile boolean toggle1 = 0;
+volatile int state = LOW;
 
 volatile long lastPressed = 0;
 
@@ -20,7 +20,7 @@ void setup(){
   pinMode(data_Pin, OUTPUT); 
   pinMode(clock_Pin, OUTPUT);
   
-  //pinMode(13, OUTPUT);
+  pinMode(13, OUTPUT);
 
   cli();//stop interrupts
 
@@ -43,7 +43,8 @@ void setup(){
   attachInterrupt(0, button_press, RISING);
 
   sei();//allow interrupts
-
+  Serial.begin(9600);
+  Serial.println("reset0");
 }//end setup
 
 ISR(TIMER1_COMPA_vect){//timer1 interrupt 1Hz
@@ -56,20 +57,42 @@ ISR(TIMER1_COMPA_vect){//timer1 interrupt 1Hz
 
 void button_press(){
   long currentMillis = millis();
-  if ( currentMillis - lastPressed > pressDelay || currentMillis - lastPressed < 0){ //TODO: overflow
+  if ( currentMillis - lastPressed > pressDelay || currentMillis - lastPressed < 0){ //overflow
     lastPressed = currentMillis;
     i=0;
+    registerWrite(i);
+    //DEBUG
+    state=!state;
+    digitalWrite(13, state);
+    Serial.println("reset1");
   }
 }
 
-// Этот метот записывает байт в регистр
+int powInt(int base, byte power){
+  int result = 1;
+  for (int i=0; i < power; i++){
+    result *= base;
+  }
+  return result;
+}
+
+// Этот метод записывает байт в регистр
 void registerWrite(int digitToSet) {
- 
+  byte convertedDigit = 0;
   //Отключаем вывод на регистре
   digitalWrite(latch_Pin, LOW);
- 
+  byte j = 0;
+  for (int i = 1; digitToSet / i > 0; i*=10){
+    convertedDigit += (digitToSet % (i * 10) / i) << (4 * j);
+    j++;
+  }
+  //for(int i = 0; i < (digitToSet / 10) + 1; i++){
+  //  convertedDigit += (digitToSet % powInt(10,i+1) / powInt(10,i)) >> (4 * i);
+  //}
+  Serial.println(digitToSet);
+  Serial.println(convertedDigit);
   // проталкиваем байт в регистр
-  shiftOut(data_Pin, clock_Pin, MSBFIRST, digitToSet);
+  shiftOut(data_Pin, clock_Pin, MSBFIRST, convertedDigit);
  
     // "защелкиваем" регистр, чтобы байт появился на его выходах
   digitalWrite(latch_Pin, HIGH);
