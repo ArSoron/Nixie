@@ -1,5 +1,6 @@
 
-#define pressDelay 150
+#define pressMinDelay 50
+#define pressMaxDelay 750
 
 //Пин подключен к ST_CP входу 74HC595
 #define latch_Pin 8
@@ -40,7 +41,7 @@ void setup(){
 
   //set digital input 2 as interrupt
 
-  attachInterrupt(0, button_press, RISING);
+  attachInterrupt(0, button_up_down, CHANGE);
 
   sei();//allow interrupts
   Serial.begin(9600);
@@ -55,17 +56,36 @@ ISR(TIMER1_COMPA_vect){//timer1 interrupt 1Hz
   registerWrite(i);
 }
 
-void button_press(){
-  long currentMillis = millis();
-  if ( currentMillis - lastPressed > pressDelay || currentMillis - lastPressed < 0){ //overflow
-    lastPressed = currentMillis;
-    i=0;
-    registerWrite(i);
-    //DEBUG
-    state=!state;
-    digitalWrite(13, state);
-    Serial.println("reset1");
+void button_up_down(){
+      Serial.println("change");
+  if (digitalRead(2) == HIGH) button_down();  // you can use direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation -
+  else button_up();
+
+}
+
+void button_down(){
+    Serial.println("down");
+  lastPressed = millis();
+}
+
+void button_up(){
+    Serial.println("up");
+  long elapsedMillis = millis() - lastPressed;
+      Serial.println(elapsedMillis);
+  if ( (elapsedMillis > pressMinDelay && elapsedMillis < pressMaxDelay) || elapsedMillis < 0){ //overflow
+    button_press();
+    lastPressed = millis();
   }
+}
+
+void button_press(){
+    Serial.println("press");
+  i=0;
+  registerWrite(i);
+  //DEBUG
+  state=!state;
+  digitalWrite(13, state);
+
 }
 
 int powInt(int base, byte power){
@@ -90,7 +110,6 @@ void registerWrite(int digitToSet) {
   //  convertedDigit += (digitToSet % powInt(10,i+1) / powInt(10,i)) >> (4 * i);
   //}
   Serial.println(digitToSet);
-  Serial.println(convertedDigit);
   // проталкиваем байт в регистр
   shiftOut(data_Pin, clock_Pin, MSBFIRST, convertedDigit);
  
