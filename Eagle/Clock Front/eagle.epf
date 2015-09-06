@@ -345,10 +345,11 @@ UsedLibrary="C:/EAGLE-7.1.0/lbr/xilinx-xc9.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/zetex.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/zilog.lbr"
+UsedLibrary="C:/EAGLE-7.1.0/lbr/_ArSoron.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="225 205 1183 738"
+Loc="-8 -8 950 525"
 State=1
 Number=0
 
