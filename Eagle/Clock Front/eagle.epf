@@ -19,6 +19,7 @@ UsedLibrary="C:/EAGLE-7.1.0/lbr/74xx-little-us.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/74xx-us.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/751xx.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/IQD-Frequency-Products.lbr"
+UsedLibrary="C:/EAGLE-7.1.0/lbr/_ArSoron.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/advanced-test-technologies.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/agilent-technologies.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/allegro.lbr"
@@ -345,11 +346,10 @@ UsedLibrary="C:/EAGLE-7.1.0/lbr/xilinx-xc9.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/zetex.lbr"
 UsedLibrary="C:/EAGLE-7.1.0/lbr/zilog.lbr"
-UsedLibrary="C:/EAGLE-7.1.0/lbr/_ArSoron.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="-8 -8 950 525"
+Loc="-959 0 -1 533"
 State=1
 Number=0
 

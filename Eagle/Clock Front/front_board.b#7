@@ -59,6 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
@@ -70,8 +71,22 @@
 </layers>
 <board>
 <plain>
-<text x="26.67" y="22.86" size="1.778" layer="1">K155ID1</text>
-<text x="52.07" y="24.13" size="1.778" layer="1">K155ID1</text>
+<text x="48.26" y="38.1" size="0.6096" layer="21" rot="R270">Q1</text>
+<text x="46.99" y="38.1" size="0.6096" layer="21" rot="R270">Q2</text>
+<text x="45.72" y="38.1" size="0.6096" layer="21" rot="R270">Q3</text>
+<text x="44.45" y="38.1" size="0.6096" layer="21" rot="R270">Q4</text>
+<text x="43.18" y="38.1" size="0.6096" layer="21" rot="R270">Q5</text>
+<text x="41.91" y="38.1" size="0.6096" layer="21" rot="R270">Q6</text>
+<text x="40.64" y="38.1" size="0.6096" layer="21" rot="R270">Q7</text>
+<text x="39.37" y="38.1" size="0.6096" layer="21" rot="R270">GND</text>
+<text x="48.26" y="49.53" size="0.6096" layer="21" rot="R90">VCC</text>
+<text x="46.99" y="49.53" size="0.6096" layer="21" rot="R90">Q0</text>
+<text x="45.72" y="49.53" size="0.6096" layer="21" rot="R90">DS</text>
+<text x="44.45" y="49.53" size="0.6096" layer="21" rot="R90">OE</text>
+<text x="43.18" y="49.53" size="0.6096" layer="21" rot="R90">ST_CP</text>
+<text x="41.91" y="49.53" size="0.6096" layer="21" rot="R90">SH_CP</text>
+<text x="40.64" y="49.53" size="0.6096" layer="21" rot="R90">MR</text>
+<text x="39.37" y="49.53" size="0.6096" layer="21" rot="R90">Q7'</text>
 </plain>
 <libraries>
 <library name="exar">
@@ -156,21 +171,46 @@ http://www.exar.com&lt;p&gt;
 </package>
 </packages>
 </library>
-<library name="40xx">
-<description>&lt;b&gt;CMOS Logic Devices, 4000 Series&lt;/b&gt;&lt;p&gt;
-Based on the following sources:
-&lt;ul&gt;
-&lt;li&gt;Motorola &lt;i&gt;CMOS LOGIC DATA&lt;/i&gt;; book, 02/88, DL131 REV 1
-&lt;li&gt;http://www.elexp.com
-&lt;li&gt;http://www.intersil.com
-&lt;li&gt;http://www.ls3c.com.tw/product/1/COMOS.html
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<library name="_ArSoron">
 <packages>
-<package name="DIL16">
+<package name="IN-12">
+<description>IN-12 indicator</description>
+<pad name="6" x="0" y="9.635" drill="2" shape="octagon" rot="R90"/>
+<pad name="9" x="6" y="0" drill="2" shape="octagon" rot="R90"/>
+<pad name="3" x="-6" y="0" drill="2" shape="octagon" rot="R90"/>
+<pad name="8" x="6" y="5" drill="2" shape="octagon" rot="R90"/>
+<pad name="4" x="-6" y="5" drill="2" shape="octagon" rot="R90"/>
+<pad name="7" x="4" y="8.635" drill="2" shape="octagon" rot="R90"/>
+<pad name="5" x="-4" y="8.635" drill="2" shape="octagon" rot="R90"/>
+<pad name="0" x="6" y="-5" drill="2" shape="octagon" rot="R90"/>
+<pad name="2" x="-6" y="-5" drill="2" shape="octagon" rot="R90"/>
+<pad name="P$10" x="0" y="-9.635" drill="2" shape="octagon" rot="R90"/>
+<pad name="+200V" x="4" y="-8.635" drill="2" shape="octagon" rot="R90"/>
+<pad name="1" x="-4" y="-8.635" drill="2" shape="octagon" rot="R90"/>
+<wire x1="-10.795" y1="8.89" x2="-5.715" y2="13.97" width="0.127" layer="21" curve="-90"/>
+<wire x1="-5.715" y1="13.97" x2="5.715" y2="13.97" width="0.127" layer="21"/>
+<wire x1="5.715" y1="13.97" x2="10.795" y2="8.89" width="0.127" layer="21" curve="-90"/>
+<wire x1="10.795" y1="8.89" x2="10.795" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="10.795" y1="-8.89" x2="5.715" y2="-13.97" width="0.127" layer="21" curve="-90"/>
+<wire x1="5.715" y1="-13.97" x2="-5.715" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="-5.715" y1="-13.97" x2="-10.795" y2="-8.89" width="0.127" layer="21" curve="-90"/>
+<wire x1="-10.795" y1="-8.89" x2="-10.795" y2="8.89" width="0.127" layer="21"/>
+<text x="3.81" y="-11.43" size="1.27" layer="21">+200V</text>
+<text x="-6.35" y="-11.43" size="1.27" layer="21">1</text>
+<text x="-8.89" y="-6.35" size="1.27" layer="21">2</text>
+<text x="-8.89" y="-1.27" size="1.27" layer="21">3</text>
+<text x="-8.89" y="3.81" size="1.27" layer="21">4</text>
+<text x="-7.62" y="8.89" size="1.27" layer="21">5</text>
+<text x="-1.27" y="11.43" size="1.27" layer="21">6</text>
+<text x="6.35" y="8.89" size="1.27" layer="21">7</text>
+<text x="8.89" y="3.81" size="1.27" layer="21">8</text>
+<text x="8.89" y="-1.27" size="1.27" layer="21">9</text>
+<text x="8.89" y="-5.08" size="1.27" layer="21">0</text>
+</package>
+<package name="K155ID1">
 <description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
-<wire x1="10.16" y1="2.921" x2="-10.16" y2="2.921" width="0.1524" layer="21"/>
-<wire x1="-10.16" y1="-2.921" x2="10.16" y2="-2.921" width="0.1524" layer="21"/>
+<wire x1="10.16" y1="2.921" x2="-10.16" y2="2.921" width="0.1524" layer="51"/>
+<wire x1="-10.16" y1="-2.921" x2="10.16" y2="-2.921" width="0.1524" layer="51"/>
 <wire x1="10.16" y1="2.921" x2="10.16" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="-10.16" y1="2.921" x2="-10.16" y2="1.016" width="0.1524" layer="21"/>
 <wire x1="-10.16" y1="-2.921" x2="-10.16" y2="-1.016" width="0.1524" layer="21"/>
@@ -193,6 +233,22 @@ Based on the following sources:
 <pad name="16" x="-8.89" y="3.81" drill="0.8128" shape="long" rot="R90"/>
 <text x="-10.541" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-7.493" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-9.525" y="6.35" size="1.27" layer="25">0</text>
+<text x="-6.985" y="6.35" size="1.27" layer="21">1</text>
+<text x="-4.445" y="6.35" size="1.27" layer="21">5</text>
+<text x="-1.905" y="6.35" size="1.27" layer="21">4</text>
+<text x="0" y="6.35" size="1.27" layer="21">Gd</text>
+<text x="3.175" y="6.35" size="1.27" layer="21">6</text>
+<text x="5.715" y="6.35" size="1.27" layer="21">7</text>
+<text x="8.255" y="6.35" size="1.27" layer="21">3</text>
+<text x="-9.525" y="-7.62" size="1.27" layer="21">8</text>
+<text x="-6.985" y="-7.62" size="1.27" layer="21">9</text>
+<text x="-5.08" y="-7.62" size="1.27" layer="21">A0</text>
+<text x="-2.54" y="-7.62" size="1.27" layer="21">A3</text>
+<text x="0" y="-7.62" size="1.27" layer="21">5V</text>
+<text x="2.54" y="-7.62" size="1.27" layer="21">A1</text>
+<text x="5.08" y="-7.62" size="1.27" layer="21">A2</text>
+<text x="8.255" y="-7.62" size="1.27" layer="21">2</text>
 </package>
 </packages>
 </library>
@@ -385,9 +441,11 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="74HC595" library="exar" package="SOP-16" value="" x="43.815" y="38.1"/>
-<element name="E$5" library="40xx" package="DIL16" value="" x="33.02" y="24.13" rot="R180"/>
-<element name="E$6" library="40xx" package="DIL16" value="" x="54.61" y="24.13" rot="R180"/>
+<element name="74HC595" library="exar" package="SOP-16" value="" x="43.815" y="44.45" rot="MR0"/>
+<element name="E$1" library="_ArSoron" package="IN-12" value="" x="31.75" y="2.54"/>
+<element name="E$2" library="_ArSoron" package="IN-12" value="" x="54.61" y="2.54"/>
+<element name="K155ID1-1" library="_ArSoron" package="K155ID1" value="" x="31.75" y="27.94"/>
+<element name="K155ID1-2" library="_ArSoron" package="K155ID1" value="" x="55.88" y="27.94"/>
 </elements>
 <signals>
 </signals>
