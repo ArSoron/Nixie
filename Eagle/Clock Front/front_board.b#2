@@ -72,6 +72,16 @@
 </layers>
 <board>
 <plain>
+<text x="-30.48" y="31.75" size="1.778" layer="25">GND</text>
+<text x="-30.48" y="29.21" size="1.778" layer="25">ST_CP</text>
+<text x="-30.48" y="26.67" size="1.778" layer="25">SH_CP</text>
+<text x="-30.48" y="24.13" size="1.778" layer="25">DS_IN</text>
+<text x="-30.48" y="21.59" size="1.778" layer="25">+5V</text>
+<text x="24.13" y="31.75" size="1.778" layer="25">GND</text>
+<text x="24.13" y="29.21" size="1.778" layer="25">ST_CP</text>
+<text x="24.13" y="26.67" size="1.778" layer="25">SH_CP</text>
+<text x="24.13" y="24.13" size="1.778" layer="25">DS_OUT</text>
+<text x="24.13" y="21.59" size="1.778" layer="25">+5V</text>
 </plain>
 <libraries>
 <library name="_ArSoron">
