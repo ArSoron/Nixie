@@ -41,7 +41,7 @@ void setup(){
 
   //set digital input 2 as interrupt
 
-  attachInterrupt(0, button_up_down, CHANGE);
+  // attachInterrupt(0, button_up_down, CHANGE);
 
   sei();//allow interrupts
   Serial.begin(9600);
