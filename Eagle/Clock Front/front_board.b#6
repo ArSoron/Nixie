@@ -1719,7 +1719,7 @@ design rules under a new name.</description>
 <via x="8.255" y="7.62" extent="1-16" drill="0.8" shape="octagon"/>
 </signal>
 <signal name="S$12">
-<wire x1="21.59" y1="-25.7175" x2="20.6375" y2="-24.765" width="0.6096" layer="1"/>
+<wire x1="21.43125" y1="-25.7175" x2="20.6375" y2="-24.765" width="0.6096" layer="1"/>
 <wire x1="20.6375" y1="-24.765" x2="20.6375" y2="-4.7625" width="0.6096" layer="1"/>
 <wire x1="20.6375" y1="-4.7625" x2="18.415" y2="-2.54" width="0.6096" layer="1"/>
 <wire x1="18.415" y1="-2.54" x2="18.415" y2="7.62" width="0.6096" layer="1"/>
@@ -1727,27 +1727,27 @@ design rules under a new name.</description>
 <wire x1="18.415" y1="7.62" x2="18.415" y2="10.795" width="0.6096" layer="16"/>
 <via x="18.415" y="7.62" extent="1-16" drill="0.8" shape="octagon"/>
 <wire x1="8.255" y1="-21.59" x2="8.255" y2="-25.7175" width="0.6096" layer="16"/>
-<wire x1="8.255" y1="-25.7175" x2="21.59" y2="-25.7175" width="0.6096" layer="16"/>
-<via x="21.59" y="-25.7175" extent="1-16" drill="0.8" shape="octagon"/>
+<wire x1="8.255" y1="-25.7175" x2="21.43125" y2="-25.7175" width="0.6096" layer="16"/>
+<via x="21.43125" y="-25.7175" extent="1-16" drill="0.8" shape="octagon"/>
 </signal>
 <signal name="S$11">
 <contactref element="LED2" pad="A"/>
 <wire x1="12.065" y1="-13.97" x2="13.97" y2="-13.97" width="0.6096" layer="16"/>
 </signal>
 <signal name="+200V_RIGHT">
-<wire x1="15.875" y1="-21.59" x2="20.32" y2="-21.59" width="0.6096" layer="16"/>
-<wire x1="20.32" y1="-21.59" x2="22.86" y2="-24.13" width="0.6096" layer="16"/>
-<via x="22.86" y="-24.13" extent="1-16" drill="0.8" shape="octagon"/>
+<wire x1="15.875" y1="-21.59" x2="22.86" y2="-21.59" width="0.6096" layer="16"/>
+<via x="22.86" y="-21.59" extent="1-16" drill="0.8" shape="octagon"/>
 <contactref element="E$6" pad="2"/>
-<wire x1="22.86" y1="-24.13" x2="22.86" y2="-27.305" width="0.6096" layer="1"/>
+<wire x1="22.86" y1="-21.59" x2="22.86" y2="-27.305" width="0.6096" layer="1"/>
 <wire x1="22.86" y1="-27.305" x2="20.955" y2="-27.305" width="0.6096" layer="1"/>
 </signal>
 <signal name="+200V_LEFT">
 <wire x1="-7.9375" y1="-21.2725" x2="-7.9375" y2="-25.4" width="0.6096" layer="16"/>
-<wire x1="-7.9375" y1="-25.4" x2="-23.1775" y2="-25.4" width="0.6096" layer="16"/>
-<via x="-23.1775" y="-25.4" extent="1-16" drill="0.8" shape="octagon"/>
+<wire x1="-7.9375" y1="-25.4" x2="-22.86" y2="-25.4" width="0.6096" layer="16"/>
+<via x="-22.86" y="-25.4" extent="1-16" drill="0.8" shape="octagon"/>
 <contactref element="E$5" pad="1"/>
-<wire x1="-23.1775" y1="-25.4" x2="-21.2725" y2="-27.305" width="0.6096" layer="1"/>
+<wire x1="-22.86" y1="-25.4" x2="-21.2725" y2="-26.9875" width="0.6096" layer="1"/>
+<wire x1="-21.2725" y1="-26.9875" x2="-21.2725" y2="-27.305" width="0.6096" layer="1"/>
 <wire x1="-21.2725" y1="-27.305" x2="-20.955" y2="-27.305" width="0.6096" layer="1"/>
 </signal>
 <signal name="+200V">
